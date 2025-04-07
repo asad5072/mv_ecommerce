@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import SalesDetails from "@/components/backOffice/SalesDetails"
+import OrderDetails from "@/components/backOffice/OrderDetails"
 
 export default function BestsellingChart() {
 	const tabs = [
@@ -41,8 +43,8 @@ export default function BestsellingChart() {
 
 			{/* chart content */}
 			<div className="w-full mt-4">
-				{chartToDisplay === "sales" && <div>Sales chart here</div>}
-				{chartToDisplay === "order" && <div>Orders chart here</div>}
+				{chartToDisplay === "sales" && <div><SalesDetails /></div>}
+				{chartToDisplay === "order" && <div><OrderDetails /></div>}
 			</div>
 		</div>
 	);
