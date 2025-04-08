@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Sidebar() {
 	return (
-		<div className="bg-slate-800 h-screen text-white p-4 w-52">
+		<div className="bg-slate-800 fixed left-0 z-40 h-screen text-white p-4 w-52">
 			<Link className="" href="#">
 				Logo
 			</Link>
