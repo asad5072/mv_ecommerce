@@ -1,0 +1,37 @@
+[
+	{
+		"date": "2025-04-01",
+		"item_name": "Notebook",
+		"qty": 3,
+		"Price": 150,
+		"id": 1
+	},
+	{
+		"date": "2025-04-03",
+		"item_name": "Pen Set",
+		"qty": 2,
+		"Price": 80,
+		"id": 2
+	},
+	{
+		"date": "2025-04-04",
+		"item_name": "Backpack",
+		"qty": 1,
+		"Price": 1200,
+		"id": 3
+	},
+	{
+		"date": "2025-04-06",
+		"item_name": "Water Bottle",
+		"qty": 4,
+		"Price": 300,
+		"id": 4
+	},
+	{
+		"date": "2025-04-07",
+		"item_name": "Laptop Stand",
+		"qty": 1,
+		"Price": 950,
+		"id": 5
+	}
+]
