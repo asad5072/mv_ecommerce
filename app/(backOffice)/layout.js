@@ -14,7 +14,7 @@ export default function Layout({ children }) {
 					<Navbar />
 				</div>
 				{/* main body */}
-				<main className="p-8 pt-20 bg-slate-900 text-slate-50 min-h-screen">
+				<main className="p-8 pt-20 bg-slate-900 text-slate-50 h-screen">
 					{children}
 				</main>
 			</div>

@@ -7,7 +7,7 @@ export default function Sidebar() {
 				Logo
 			</Link>
 			<div className="flex flex-col space-y-3 pt-6">
-				<Link href="#">Dashboard</Link>
+				<Link href="/dashboard/">Dashboard</Link>
 				<Link href="#">Products</Link>
 				<Link href="#">Customers</Link>
 				<Link href="#">Catalouge</Link>

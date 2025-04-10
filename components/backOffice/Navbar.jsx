@@ -1,4 +1,22 @@
-import { Sun, Bell, User, AlignJustify } from "lucide-react";
+import {
+	Sun,
+	Bell,
+	User,
+	AlignJustify,
+	LayoutDashboard,
+	Settings,
+	LogOut,
+} from "lucide-react";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuLabel,
+	DropdownMenuSeparator,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Navbar() {
 	return (
@@ -15,9 +33,34 @@ export default function Navbar() {
 					<button>
 						<Bell />
 					</button>
-					<button>
-						<User />
-					</button>
+					<DropdownMenu className={cn("")}>
+						<DropdownMenuTrigger className="cursor-pointer">
+							<User />
+						</DropdownMenuTrigger>
+						<DropdownMenuContent
+							className={cn("text-red-500 absolute right-3 ")}
+						>
+							<DropdownMenuLabel>My Account</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+							<Link href="/dashboard/profile">
+								<DropdownMenuItem className="">
+									<Settings />
+									<span>Profile</span>
+								</DropdownMenuItem>
+							</Link>
+							<DropdownMenuItem>Billing</DropdownMenuItem>
+							<Link href="/">
+								<DropdownMenuItem>
+									<LayoutDashboard />
+									<span>Dashboard</span>
+								</DropdownMenuItem>
+							</Link>
+							<DropdownMenuItem>
+								<LogOut />
+								<span>Log out</span>
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</div>
 			</div>
 		</div>
