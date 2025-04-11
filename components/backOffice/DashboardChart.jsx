@@ -3,7 +3,7 @@ import WeeklySalesChart from "@/components/backOffice/WeeklySalesChart";
 
 export default function DashboardChart() {
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
+		<div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:mr-8">
 			<BestSellingChart />
 			<WeeklySalesChart />
 		</div>

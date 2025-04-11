@@ -1,6 +1,8 @@
 "use client";
 import { Sun, Bell, User, AlignJustify } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -11,18 +13,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import ThemeSwitcher from "../ThemeSwitcher";
 
-export default function Navbar() {
+export default function Navbar({ setShowSidebar, showSidebar }) {
 	return (
-		<div className="pl-52 z-50">
+		<div className="md:pl-52 z-50">
 			{/* 3 icons */}
-			<div className="flex items-center justify-between bg-slate-700 text-slate-50 h-16 px-8 py-4 fixed top-0 w-full pr-56">
-				<button>
+			<div className="flex items-center justify-between bg-slate-900 text-slate-50 h-16 px-8 py-4 fixed top-0 w-full md:pr-56">
+				<button onClick={() => setShowSidebar(!showSidebar, "hello")}>
 					<AlignJustify />
 				</button>
 				<div className="flex items-center gap-4">
-					{/* <button>
-						<Sun className="text-green-600" />
-					</button> */}
 					<div>
 						<ThemeSwitcher />
 					</div>
@@ -52,19 +51,16 @@ export default function Navbar() {
 							<DropdownMenuSeparator />
 							<Link href="/dashboard/profile">
 								<DropdownMenuItem className="">
-									<Settings />
 									<span>Profile</span>
 								</DropdownMenuItem>
 							</Link>
 							<DropdownMenuItem>Billing</DropdownMenuItem>
 							<Link href="/">
 								<DropdownMenuItem>
-									<LayoutDashboard />
 									<span>Dashboard</span>
 								</DropdownMenuItem>
 							</Link>
 							<DropdownMenuItem>
-								<LogOut />
 								<span>Log out</span>
 							</DropdownMenuItem>
 						</DropdownMenuContent>

@@ -38,9 +38,14 @@ export default function LargeCards() {
 		},
 	];
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:mr-8">
 			{orderStatus.map((item, i) => {
-				return <LargeCard data={item} key={i} />;
+				return (
+					<LargeCard
+						data={item}
+						key={i}
+					/>
+				);
 			})}
 		</div>
 	);
