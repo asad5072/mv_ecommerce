@@ -41,15 +41,34 @@ export default function Navbar() {
 					<button>
 						<User className="text-green-600" />
 					</button>
-					<button className="group relative">
-						<Image
-							src="/profile.jpeg"
-							alt="User profile"
-							width={200}
-							height={200}
-							className="w-8 h-8 rounded-full"
-						/>
-					</button>
+					<DropdownMenu className={cn("")}>
+						<DropdownMenuTrigger className="cursor-pointer">
+							<User />
+						</DropdownMenuTrigger>
+						<DropdownMenuContent
+							className={cn("text-red-500 absolute right-3 ")}
+						>
+							<DropdownMenuLabel>My Account</DropdownMenuLabel>
+							<DropdownMenuSeparator />
+							<Link href="/dashboard/profile">
+								<DropdownMenuItem className="">
+									<Settings />
+									<span>Profile</span>
+								</DropdownMenuItem>
+							</Link>
+							<DropdownMenuItem>Billing</DropdownMenuItem>
+							<Link href="/">
+								<DropdownMenuItem>
+									<LayoutDashboard />
+									<span>Dashboard</span>
+								</DropdownMenuItem>
+							</Link>
+							<DropdownMenuItem>
+								<LogOut />
+								<span>Log out</span>
+							</DropdownMenuItem>
+						</DropdownMenuContent>
+					</DropdownMenu>
 				</div>
 			</div>
 		</div>
