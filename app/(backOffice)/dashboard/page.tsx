@@ -4,7 +4,7 @@ import DashboardChart from "@/components/backOffice/DashboardChart";
 import CustomDataTable from "@/components/backOffice/CustomDataTable";
 export default function Dashboard() {
 	return (
-		<div className="space-y-6 h-screen overflow-y-scroll custom-scroll pl-52 z-10">
+		<div className="space-y-6 overflow-y-scroll custom-scrollbar pl-52 z-10 bg-white dark:bg-slate-700">
 			<Heading title="Dashboard Overview" />
 			{/* cards */}
 			<LargeCards />

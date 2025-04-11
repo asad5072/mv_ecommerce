@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import SalesDetails from "@/components/backOffice/SalesDetails"
-import OrderDetails from "@/components/backOffice/OrderDetails"
+import SalesDetails from "@/components/backOffice/SalesDetails";
+import OrderDetails from "@/components/backOffice/OrderDetails";
 
 export default function BestsellingChart() {
 	const tabs = [
@@ -25,7 +25,10 @@ export default function BestsellingChart() {
 			<div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
 				<ul className="flex flex-wrap -mb-px">
 					{tabs.map((item, i) => (
-						<li className="me-2" key={i}>
+						<li
+							className="me-2"
+							key={i}
+						>
 							<button
 								onClick={() => setChartToDisplay(item.type)}
 								className={
@@ -42,9 +45,9 @@ export default function BestsellingChart() {
 			</div>
 
 			{/* chart content */}
-			<div className="w-full mt-4">
-				{chartToDisplay === "sales" && <div><SalesDetails /></div>}
-				{chartToDisplay === "order" && <div><OrderDetails /></div>}
+			<div className="w-full mt-4 relative">
+				{chartToDisplay === "sales" && <SalesDetails />}
+				{chartToDisplay === "order" && <OrderDetails />}
 			</div>
 		</div>
 	);

@@ -1,68 +1,83 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend
 );
 
 export default function OrderDetails() {
-  const [chartData, setChartData] = useState(null);
+	const [chartData, setChartData] = useState(null);
 
-  useEffect(() => {
-    const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+	useEffect(() => {
+		const labels = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+		];
 
-    const data = {
-      labels,
-      datasets: [
-        // {
-        //   label: 'Dataset 1',
-        //   data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-        //   borderColor: 'rgb(255, 99, 132)',
-        //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        // },
-        {
-          label: 'Order_status',
-          data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-          borderColor: 'rgb(53, 162, 235)',
-          backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        },
-      ],
-    };
+		const data = {
+			labels,
+			datasets: [
+				// {
+				//   label: 'Dataset 1',
+				//   data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
+				//   borderColor: 'rgb(255, 99, 132)',
+				//   backgroundColor: 'rgba(255, 99, 132, 0.5)',
+				// },
+				{
+					label: "Order_status",
+					data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
+					borderColor: "rgb(53, 162, 235)",
+					backgroundColor: "rgba(53, 162, 235, 0.5)",
+				},
+			],
+		};
 
-    setChartData(data);
-  }, []);
+		setChartData(data);
+	}, []);
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Order Status',
-      },
-    },
-  };
+	const options = {
+		responsive: true,
+		plugins: {
+			legend: {
+				position: "top",
+			},
+			title: {
+				display: true,
+				text: "Order Status",
+			},
+		},
+	};
 
-  return <div>{chartData && <Line options={options} data={chartData} />}</div>;
+	return (
+		<>
+			{chartData && (
+				<Line
+					options={options}
+					data={chartData}
+				/>
+			)}
+		</>
+	);
 }
